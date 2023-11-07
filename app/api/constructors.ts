@@ -1,4 +1,4 @@
-interface Constructor {
+export type Constructor = {
   id: string
   name: string
   reference: string
@@ -6,8 +6,9 @@ interface Constructor {
   wiki_url: string
 }
 
-export async function getConstructors(): Promise<Constructor[]> {
-  const url = 'http://localhost:8000/constructors'
+export async function getConstructors(offset: number = 0, page_count: number = 50): Promise<Constructor[]> {
+  const params = `offset=${offset}&page_count=${page_count}`
+  const url = `http://localhost:8000/constructors?${params}`
   const res = await fetch(url)
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
