@@ -2,10 +2,6 @@
 
 import { Constructor, getConstructors } from '@/app/api/constructors'
 import { useEffect, useMemo, useState } from 'react'
-import {
-  LinkIcon
-} from '@heroicons/react/24/outline';
-import Link from 'next/link'
 import type { ColumnDef } from '@tanstack/react-table';
 import { Table } from '@/app/components/Table/Table'
 
